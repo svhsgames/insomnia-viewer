@@ -1,0 +1,254 @@
+@import "./one.less";
+@import "./markdown.less";
+
+body {
+	margin: 8px 0;
+	margin-bottom: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+	background: var(--palette_body_background);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--palette_body_subtitle);
+}
+
+.row {
+	margin-bottom: 0;
+}
+
+.insomnia-drawer {
+	width: calc(100% - 64px)!important;
+	max-width: 500px;
+}
+
+a[href] {
+	text-decoration: none!important;
+}
+
+.insomnia-item {
+	font-family: Roboto Mono;
+	padding-right: 1rem!important;
+	color: var(--palette_body_headline);
+	.list-item-name {
+		overflow: hidden!important;
+		text-overflow: ellipsis;
+		font-size: 14px;
+		.seperator {
+			opacity: .2!important;
+		}
+		span:not(.last) {
+			opacity: .7;
+		}
+	}
+}
+
+.insomnia-sidebar {
+	margin: 0!important;
+	border: none!important;
+	border-right: 1px solid var(--palette_divider)!important;
+	height: calc(100vh - 64px - 16px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.insomnia-error {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #f05545;
+
+	.container {
+		margin-top: 20vh;
+
+		.text-icon {
+			color: #fff;
+			font-size: 96px;
+			user-select: none;
+		}
+
+		h1 {
+			color: #fff;
+			margin-left: 0;
+			margin-top: 96px;
+		}
+
+		p {
+			color: #ffcdd2;
+			margin: 1rem 0;
+			max-width: 600px;
+		}
+
+		a {
+			color: #fff;
+			text-decoration: underline!important;
+		}
+	}
+}
+
+.insomnia-method {
+	font-weight: 500;
+	font-family: Roboto Mono;
+	background: var(--palette_header_background);
+	color: #FFF;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 4px 8px;
+	margin-right: 1rem;
+	&.insomnia-GET {
+		background: var(--one-purple);
+	}
+	&.insomnia-POST {
+		background: var(--one-green);
+	}
+	&.insomnia-PUT {
+		background: var(--one-orange);
+	}
+	&.insomnia-PATCH {
+		background: var(--one-yellow);
+	}
+	&.insomnia-DELETE {
+		background: var(--one-red);
+	}
+	&.insomnia-HEAD,
+	&.insomnia-OPTIONS {
+		background: var(--one-cyan);
+	}
+}
+
+.insomnia-docs {
+	overflow: auto;
+	height: calc(100vh - 64px - 32px);
+	padding: 1rem;
+	.insomnia-docs-header {
+		@media (max-width: 1280px) {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size: 16px;
+			display: block;
+		}
+	}
+}
+
+.only-large {
+	display: none;
+	@media (min-width: 1280px) {
+		display: block;
+	}
+}
+
+.only-small {
+	@media (min-width: 1280px) {
+		visibility: hidden;
+		& ~ .photon-toolbartitle {
+			margin-left: 12px!important;
+		}
+	}
+}
+
+ul.photon-list li.photon-list-item.active {
+    background: var(--palette_body_waves);
+}
+
+.photon-toolbar {
+	&:not(.variant-raised) {
+		border-bottom: 1px solid var(--palette_divider)!important;
+	}
+	.photon-toolbaractions {
+		pointer-events: none;
+		i {
+			pointer-events: all;
+		}
+	}
+}
+
+.insomnia-search {
+	position: absolute;
+    height: 48px;
+    top: 0;
+    margin: 8px 0;
+    border-radius: 4px;
+    right: 64px;
+	background: var(--palette_header_background);
+	width: 500px;
+	@media (max-width: 1280px) {
+		left: 6px;
+		right: 6px;
+		width: auto;
+		display: none;
+		z-index: 4
+	}
+	@media (min-width: 1280px) {
+		display: block!important;
+	}
+	.photon-input {
+		margin: 0;
+		margin-top: -2px;
+		overflow: hidden;
+		width: calc(100% - 2px);
+		input {
+			margin-top: 0;
+			padding-top: 16px!important;
+			padding-bottom: 16px!important;
+			border-bottom: none;
+			border-radius: 4px;
+			width: calc(100% - 67px);
+		    padding-left: 52px!important;
+		}
+		.prefix {
+			font-family: Material Icons;
+			font-size: 24px;
+			transform: translate(2px, -2px);
+		}
+	}
+}
+
+.badge {
+	background-color: var(--one-purple);
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 36px;
+}
+
+.insomnia-search-results-list {
+	border: 0!important;
+    margin: 0!important;
+    padding: 0!important;
+    margin-bottom: -9px!important;
+    margin-top: 16px!important;
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-height: 40vh;
+	border-top: 1px solid var(--palette_divider)!important;
+	a:not(:last-child) .insomnia-item {
+		border-bottom: 1px solid var(--palette_divider)!important;
+	}
+	.insomnia-search-result-tag {
+		min-height: 72px;
+		.description {
+			font-size: 12px;
+			padding-left: 62px;
+			overflow: hidden;
+    		text-overflow: ellipsis;
+		}
+	}
+}
+
+.insomnia-search-result {
+	::-webkit-scrollbar-track,
+	::-webkit-scrollbar-corner {
+		background: var(--palette_sheet_background);
+	}
+}

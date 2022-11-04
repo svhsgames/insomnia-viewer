@@ -1,0 +1,157 @@
+@font-face {
+	font-family: "Fira Code";
+	src: url("https://raw.githubusercontent.com/tonsky/FiraCode/master/distr/eot/FiraCode-Medium.eot") format("embedded-opentype"), url("https://raw.githubusercontent.com/tonsky/FiraCode/master/distr/woff2/FiraCode-Medium.woff2") format("woff2"), url("https://raw.githubusercontent.com/tonsky/FiraCode/master/distr/woff/FiraCode-Medium.woff") format("woff"), url("https://raw.githubusercontent.com/tonsky/FiraCode/master/distr/ttf/FiraCode-Medium.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.md-container,
+.insomnia-docs {
+	font-family: Roboto;
+	color: var(--palette_body_body);
+	font-size: 14px;
+
+	a {
+		color: var(--one-purple);
+		font-family: Roboto Mono;
+		font-weight: 700;
+
+		&:hover {
+			text-decoration: underline!important;
+		}
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: Roboto Mono;
+		padding-bottom: 8px;
+		border-bottom: 1px solid var(--palette_divider);
+		margin-bottom: 16px;
+
+		&:not(:first-child) {
+			margin-top: 32px;
+		}
+	}
+
+	code,
+	pre {
+		font-family: Fira Code;
+		font-size: 12px;
+		color: var(--palette_body_body);
+		border: 1px solid var(--palette_divider);
+		background: var(--palette_body_hover);
+		padding: 0 4px;
+		border-radius: 2px;
+	}
+
+	pre code {
+		border: none;
+		border-radius: 0;
+		padding: 0;
+		background: transparent;
+		color: var(--palette_body_body);
+		line-height: 1.5;
+
+		.token.string {
+			color: var(--one-green);
+		}
+
+		.token.boolean,
+		.token.number {
+			color: var(--one-orange);
+		}
+
+		.token.punctuation {
+			color: var(--mono-1);
+		}
+
+		.token.operator {
+			color: var(--one-cyan);
+		}
+
+		.token.keyword {
+			color: var(--one-purple);
+		}
+
+		.token.constant {
+			color: var(--one-yellow);
+		}
+
+		.token.function {
+			color: var(--one-blue);
+		}
+	}
+
+	pre {
+		margin: 8px;
+		padding: 8px;
+		overflow-x: auto;
+	}
+
+	table {
+		box-shadow: inset 0 0 1px 1px var(--palette_divider);
+		width: calc(100% - 1rem);
+		margin: 0 8px;
+
+		thead {
+			font-family: Roboto Mono;
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: 400;
+			position: relative;
+
+			&::after {
+				position: absolute;
+				top: -1px;
+				left: -1px;
+				right: -1px;
+				bottom: 1px;
+				content: "";
+				background: var(--palette_divider);
+				opacity: .54;
+				z-index: -1;
+			}
+
+			tr {
+				height: 36px;
+				box-shadow: 0 1px 0 0 var(--palette_divider);
+
+				th {
+					opacity: 0.87;
+					padding: 0 1rem;
+					text-align: left;
+					padding-bottom: 2px;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				height: 24px;
+				line-height: 1.5;
+
+				&:not(:last-child) {
+					box-shadow: 0 1px 0 0 var(--palette_divider);
+				}
+			}
+
+			tr td {
+				padding: 4px 1rem;
+				text-align: left;
+			}
+		}
+	}
+
+	ul {
+		li {
+			line-height: 1.8;
+		}
+	}
+
+}
+
+.dialog-body .md-container pre {
+	margin: 0;
+	margin-bottom: 16px;
+}
